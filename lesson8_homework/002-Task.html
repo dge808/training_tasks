@@ -1,0 +1,57 @@
+﻿<!-- 
+    
+    Создайте контейнер div с текстом "Click Me". 
+    Сделайте так, чтобы при нажатой клавише мыши у элемента менялся цвет фона, а так же
+     надпись "Click Me"
+    заменялась на "Release Me". После отпускания клавиши мыши возвращался первоначальный
+     цвет фона, а надпись
+    "Release Me"  заменялась на "Thank You".
+
+-->
+
+<html>
+
+<head>
+    <meta charset = 'UTF-8'>
+    <style type="text/css">
+        #activeDiv {
+            width: 188px;
+            height: 88px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            line-height: 88px;
+            border: 1px solid purple;
+        }
+    </style>
+    <script type = 'text/javascript'>
+        window.onload = function() {
+            var element = document.getElementById('activeDiv');
+
+            element.onmousedown = releaseMe;
+            element.onmouseup = thankYou;
+
+            function releaseMe(element){
+                this.innerHTML = 'Release Me';
+                this.style.backgroundColor = 'pink';
+            };
+
+            function thankYou(element) {
+                this.innerHTML = 'Thank You';
+                this.style.backgroundColor = '';
+
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+<div id = 'activeDiv'>
+    Click Me !
+</div>
+
+</body>
+
+</html>

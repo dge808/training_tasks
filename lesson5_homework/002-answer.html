@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>setInterval/clearInterval example</title>
+    <script>
+        //... Ваш код
+        var changingColor = setInterval(changeColor, 1000);
+
+        function changeColor(){
+            document.getElementById("my_box").style.color = randomColor();
+
+        }
+
+        function randomColor(){
+            var colors = ["red", "white", "blue", "purple", "yellow", "green", "orsnge", "grey"];
+            var randomColorNumber = Math.round( Math.random() * 8);
+            return colors[randomColorNumber];
+        }
+
+        function stopTextColor() {
+            clearInterval(changingColor);
+        }
+    </script>
+</head>
+<body onload="changeColor();">
+
+<!--Напишите скрипт, который будет анимировать параграф, находящийся в <div id="my_box">
+изменением цвета текста.
+    Реализуйте функцию-обработчик "stopTextColor" так, чтобы при нажатии на кнопку Stop
+    анимация прекращалась-->
+<div id="my_box">
+    <p>Hello World</p>
+</div>
+
+<button onclick="stopTextColor();">Stop</button>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Интеграция JavaScript</title>
+    <meta charset = "utf-8">
+
+    <script type="text/javascript">
+
+        function findDuplicates(arr) {
+            var duplicate = [], buffer, k;  
+            for (var j = 0; j < arr.length - 1; j++){
+                var buffer = arr[j];
+                for (var i = j + 1; i < arr.length; i++){
+                    if ( buffer == arr[i]){
+                       var check = duplicate.some(function(value){
+                        return value == buffer;
+                       });
+                        if (!check) {duplicate.push(buffer);}
+                    };
+                };
+            };
+            return duplicate;
+        };
+
+        var initialArr = [1, 2, 3, 1, 5, 3, 4, 1];
+
+        var duplicates = findDuplicates(initialArr);
+
+        console.log("Initial array: " + initialArr);
+        console.log("</br>");
+        console.log("Duplicate elements: "+ duplicates);
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

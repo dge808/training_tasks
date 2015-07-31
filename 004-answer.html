@@ -1,0 +1,35 @@
+﻿<!--
+
+   Создайте многомерный массив, который сможет служить в качесве таблицы умножения. 
+   См. код. 
+
+-->
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function mulTableCreation(n, m) {
+            var table = new Array(n);
+            for (var i = 1; i < table.length; i++){
+                table[i] = [];
+                for (var j = 1; j < m; j++) {
+                    table[i][j] = i * j;
+                }
+            }
+            return table;
+        }
+
+        var mulTable = mulTableCreation(10, 10);
+
+        console.log("3 * 9 = " + mulTable[3][9]); // Должно вывести в документ 3 * 9 = 27
+        console.log("</br>");
+        console.log("5 * 7 = " + mulTable[5][7]); // Должно вывести в документ 5 * 7 = 35
+        
+        //console.log(mulTable);
+
+    </script>
+</body>
+</html>

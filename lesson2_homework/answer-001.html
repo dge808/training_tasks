@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+﻿<!--
+
+    Реализуйте функцию copyPropertyNamesToArray. Второй аргумент функции должен быть опциональным.
+    Если функция вызывается без второго аргумента, она должна вернуть массив, с именами свойств объекта obj.
+    Если второй аргумент передается, функция должна добавить имена свойств объекта obj  в массив arr.
+
+-->
+<script>
+    function copyPropertyNamesToArray(obj, arr) {
+        if (arr === undefined) {
+            var propertyNames = [];
+            for (var key in obj) {
+                propertyNames.push(key);
+            }
+            return propertyNames;
+        } else {
+            for (var key in obj) {
+                arr.push(key);
+            }
+            return arr;
+        }
+    }
+
+    var obj1 = { a: 10, b: 20 };
+    var obj2 = { c: 30, d: 40 };
+
+    var a = copyPropertyNamesToArray(obj1);
+
+    copyPropertyNamesToArray(obj2, a);
+
+    alert(a); // Выводится "a,b,c,d"
+</script>
+
+</body>
+</html>

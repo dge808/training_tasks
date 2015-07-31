@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+﻿<!--
+
+    Реализуйте функцию makeCounter, которая должна ворзвращать счетчик с заданным начальным значением и шагом.
+    Для решения задачи используйте замыкание.
+
+-->
+<script>
+
+    function makeCounter(/*Начальное значение*/ initVal, /*Шаг*/ step) {
+        var currentCounter = initVal;
+
+        return counter  = {
+                value: function() {
+                    return currentCounter;
+                },
+                increase: function() {
+                    return currentCounter += step;
+                },
+                decrease: function() {
+                    return currentCounter -= step;
+                }
+            }
+
+        }
+
+    // Запрашиваем функцию создать счетчик с начальным значением 2 и шагом 2
+    var counter2 = makeCounter(2, 2);
+   /* var counter1 = makeCounter(1, 1);*/
+    alert(counter2.value());     // Должно быть выведено 2
+    alert(counter2.increase());  // Должно быть выведено 4
+    alert(counter2.increase());  // Должно быть выведено 6
+    alert(counter2.decrease());  // Должно быть выведено 4
+/*    console.log(counter1.value());
+    console.log(counter1.increase());
+    console.log(counter1.increase());
+    console.log(counter2.value());*/
+
+
+</script>
+</body>
+</html>

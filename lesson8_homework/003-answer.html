@@ -1,0 +1,51 @@
+<!--  
+    
+    Создайте кнопку, убегающую от пользователя, если тот хочет её нажать.
+    
+-->
+
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <style type = 'text/css'>
+
+        #danger {
+            position: absolute;
+            height: 100px;
+            width: 60px;
+        }
+        button{
+            position: relative;
+            top: 10px;
+            left: 10px;
+            width:78px;
+            height: 48px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var elem = document.getElementById("danger");
+
+            elem.addEventListener("mouseover", function () {
+                console.log(window.innerWidth);
+                console.log(window.innerHeight);
+                elem.style.left = Math.random() * window.innerWidth + "px";
+                elem.style.top = Math.random() * window.innerHeight + "px";
+            });
+
+
+
+        };
+
+    </script>
+</head>
+
+<body>
+<div id = 'danger'>
+    <button>Я колобок</button>
+</div>
+
+</body>
+
+</html>

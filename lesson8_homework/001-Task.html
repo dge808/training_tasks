@@ -1,0 +1,49 @@
+﻿<!-- 
+    
+    Создайте контейнер div с текстом "Mouse Over Me". 
+    Сделайте так, чтобы при наведении на него текст "Mouse Over Me" менялся на "Thank You"
+     
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = 'UTF-8'>
+    <style type="text/css">
+        #activeDiv {
+            width: 188px;
+            height: 88px;
+            font-weight: bold;
+            background-color: beige;
+            text-align: center;
+            line-height: 88px;
+        }
+    </style>
+    <script type = 'text/javascript'>
+        window.onload = function() {
+            var element = document.getElementById('activeDiv');
+
+            element.onmouseover = changeText;
+            element.onmouseout = returnText;
+
+            function changeText(element){
+                this.innerHTML = 'Thank you';
+            }
+
+            function returnText(element){
+                this.innerHTML = 'Mouse Over Me';
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+<div id = 'activeDiv'>
+    Mouse Over Me
+</div>
+
+
+</body>
+
+</html>
